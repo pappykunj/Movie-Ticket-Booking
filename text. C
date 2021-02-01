@@ -24,11 +24,11 @@ void insertfront()
     
 
     newnode->link=NULL;
-    if(header==NULL)
-        header=newnode;
+    if(head==NULL)
+        head=newnode;
     else
     {
-        newnode->link=header;
+        newnode->link=head;
         header=newnode;
     }
     printf("\nSuccessfully inserted");
