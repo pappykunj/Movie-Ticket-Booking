@@ -1,6 +1,9 @@
 struct book
 {
-    int data;
+    char code[20];
+	char name[20];
+	char date[20];
+	int cost;
     struct book *next;
 };
 
@@ -8,11 +11,8 @@ struct book* head=NULL;
 
 void insertfront() 
 {
-    struct Node*newnode;
-    newnode->code=ele;
-    newnode->name=ele;
-    newnode->date=ele;
-    newnode->cost=ele;
+    struct book*newnode;
+    newnode=(struct Node*)malloc(sizeof(struct Node))
     printf("\nEnter movie code:");
     scanf("%s",newnode->code);
     printf("\nEnter name: ") ;
@@ -22,7 +22,7 @@ void insertfront()
     printf("\nEnter ticket price: ") ;
     scanf("%s",newnode->cost) ;
     
-    newnode=(struct Node*)malloc(sizeof(struct Node))
+
     newnode->link=NULL;
     if(header==NULL)
         header=newnode;
