@@ -1,26 +1,28 @@
-struct node
+struct book
 {
     int data;
-    struct node *next;
+    struct book *next;
 };
 
-struct node* head=NULL;
+struct book* head=NULL;
 
 void insertfront() 
 {
-    int ele;
     struct Node*newnode;
+    newnode->code=ele;
+    newnode->name=ele;
+    newnode->date=ele;
+    newnode->cost=ele;
     printf("\nEnter movie code:");
-    scanf("%s",b.code);
+    scanf("%s",newnode->code);
     printf("\nEnter name: ") ;
-    scanf("%s", b.name) ;
+    scanf("%s",newnode->name) ;
     printf("\nEnter release date: ") ;
-    scanf("%s", b. date) ;
+    scanf("%s",newnode->date) ;
     printf("\nEnter ticket price: ") ;
-    scanf("%s", b. cost) ;
+    scanf("%s",newnode->cost) ;
     
-    newnode=(struct Node*)malloc(sizeof(struct Node));
-    newnode->data=ele;
+    newnode=(struct Node*)malloc(sizeof(struct Node))
     newnode->link=NULL;
     if(header==NULL)
         header=newnode;
