@@ -38,3 +38,34 @@ void traverse()
     }
     printf("NULL\n");
 }
+
+void search()
+{   
+    struct Node *temp;
+    int flag=-1,ele;
+    printf("Enter the data to be searched:");
+    scanf("%d",&ele);
+    if(header==NULL)
+    {
+        printf("\nList is empty...The element not existing...\n");
+        return;
+    } 
+    else
+    {
+        temp=header;
+        while(temp->link!=NULL)
+        {
+            temp=temp->link;
+            if(temp->data==ele)
+            {
+                flag=0;
+                break;
+            }
+        }
+        if(flag==-1)
+            printf("The data is not existing...\n");
+        else
+            printf("The data has been found...\n");
+    }
+}
+
