@@ -44,10 +44,10 @@ void traverse()
     }
     while(temp!=NULL)
     {
-        printf("%s -> ",temp->code);
+        printf("%d ->" ,temp->code);
 	printf("%s ->" ,temp->name);
 	printf("%s ->" ,temp->date);
-	printf("%s ->" ,temp->cost);
+	printf("%d " ,temp->cost);
 	printf("/n");
         temp=temp->link;
     }
