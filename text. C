@@ -35,16 +35,20 @@ void insertfront()
 }
 void traverse()
 {
-    struct Node *temp;
-    temp=header;
-    if(header==NULL)
+    struct book *temp;
+    temp=head;
+    if(head==NULL)
     {
         printf("List is empty..\n");
         return;
     }
     while(temp!=NULL)
     {
-        printf("%d -> ",temp->data);
+        printf("%s -> ",temp->code);
+	printf("%s ->" ,temp->name);
+	printf("%s ->" ,temp->date);
+	printf("%s ->" ,temp->cost);
+	printf("/n");
         temp=temp->link;
     }
     printf("NULL\n");
