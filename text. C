@@ -1,6 +1,6 @@
 struct book
 {
-    char code[20];
+    int code;
 	char name[20];
 	char date[20];
 	int cost;
@@ -14,7 +14,7 @@ void insertfront()
     struct book*newnode;
     newnode=(struct Node*)malloc(sizeof(struct Node))
     printf("\nEnter movie code:");
-    scanf("%s",newnode->code);
+    scanf("%d",newnode->code);
     printf("\nEnter name: ") ;
     scanf("%s",newnode->name) ;
     printf("\nEnter release date: ") ;
@@ -62,7 +62,7 @@ void search()
     scanf("%d",&ele);
     if(head==NULL)
     {
-        printf("\nList is empty...The element not existing...\n");
+        printf("\nList is empty...\n");
         return;
     } 
     else
@@ -78,9 +78,17 @@ void search()
             }
         }
         if(flag==-1)
-            printf("The data is not existing...\n");
+            printf("The record not existing...\n");
         else
-            printf("The data has been found...\n");
+	{
+	    printf("\n Record Found\n");
+	    printf("\n\t\tCode ::%d",temp->code);
+	    printf("\n\t\tmovie name ::%s",temp->name);
+	    printf("\n\t\tmovie date ::%s",temp->date);
+	    printf("\n\t\tprice of ticket ::%d",temp->cost);
+	    printf("\n");
+	}
+            
     }
 }
 
