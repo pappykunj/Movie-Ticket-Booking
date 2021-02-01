@@ -53,4 +53,35 @@ void traverse()
     }
     printf("NULL\n");
 }
+void search()
+{   
+    struct book *temp;
+    int code;
+    int flag=-1,ele;
+    printf("Enter the code to be searched:");
+    scanf("%d",&ele);
+    if(head==NULL)
+    {
+        printf("\nList is empty...The element not existing...\n");
+        return;
+    } 
+    else
+    {
+        temp=head;
+        while(temp->link!=NULL)
+        {
+            temp=temp->link;
+            if(temp->code==ele)
+            {
+                flag=0;
+                break;
+            }
+        }
+        if(flag==-1)
+            printf("The data is not existing...\n");
+        else
+            printf("The data has been found...\n");
+    }
+}
+
 
