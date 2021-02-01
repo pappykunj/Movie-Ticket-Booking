@@ -22,3 +22,19 @@ void insertfront()
     }
     printf("\nSuccessfully inserted");
 }
+void traverse()
+{
+    struct Node *temp;
+    temp=header;
+    if(header==NULL)
+    {
+        printf("List is empty..\n");
+        return;
+    }
+    while(temp!=NULL)
+    {
+        printf("%d -> ",temp->data);
+        temp=temp->link;
+    }
+    printf("NULL\n");
+}
