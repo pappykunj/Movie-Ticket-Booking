@@ -11,11 +11,12 @@ struct book
 
 };
 
+struct book* head=NULL;
 int seat = 60 ;
 
 void insert_details();//for inserting movie details
-void traverse(); // for view all data 
-void search(); // for finding data
+void viewAll(); // for view all data 
+void find(); // for finding data
 void book_ticket(); //for booking tickets
 
 void main()
@@ -62,33 +63,31 @@ void main()
 
 }
 
-struct book* head=NULL;
+
 
 void insert_details() 
 {
     struct book*newnode;
-    newnode=(struct Node*)malloc(sizeof(struct Node))
+    newnode=(struct book*)malloc(sizeof(struct book));
+    newnode->link=NULL;
     printf("\nEnter movie code:");
-    scanf("%d",newnode->code);
+    scanf("%d",&newnode->code);
     printf("\nEnter name: ") ;
     scanf("%s",newnode->name) ;
     printf("\nEnter release date: ") ;
     scanf("%s",newnode->date) ;
     printf("\nEnter ticket price: ") ;
-    scanf("%s",newnode->cost) ;
-    
-
-    newnode->link=NULL;
+    scanf("%d",&newnode->cost) ;
     if(head==NULL)
         head=newnode;
     else
     {
         newnode->link=head;
-        header=newnode;
+        head=newnode;
     }
     printf("\nSuccessfully inserted");
 }
-void Viewall()
+void viewAll()
 {
     struct book *temp;
     temp=head;
@@ -103,18 +102,18 @@ void Viewall()
 	printf("%s ->" ,temp->name);
 	printf("%s ->" ,temp->date);
 	printf("%d " ,temp->cost);
-	printf("/n");
+	printf("\n");
         temp=temp->link;
     }
-    printf("NULL\n");
+    printf("\n");
 }
 void find()
 {   
     struct book *temp;
     int code;
-    int flag=-1,ele;
+    int flag=0,item;
     printf("Enter the code to be searched:");
-    scanf("%d",&ele);
+    scanf("%d",&item);
     if(head==NULL)
     {
         printf("\nList is empty...\n");
@@ -126,13 +125,13 @@ void find()
         while(temp->link!=NULL)
         {
             temp=temp->link;
-            if(temp->code==ele)
+            if(temp->code==item)
             {
-                flag=0;
+                flag=1;
                 break;
             }
         }
-        if(flag==-1)
+        if(flag==0)
             printf("The record not existing...\n");
         else
 	{
