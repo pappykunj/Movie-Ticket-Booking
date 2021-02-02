@@ -3,13 +3,13 @@
 
 struct book
 {
-	char code[20];
+	int code;
 	char name[20];
 	char date[20];
 	int cost;
-	
+	struct book *link;
 
-}b;
+};
 
 int seat = 60 ;
 
@@ -48,9 +48,9 @@ void main()
 		case 3:
     			find();
    			break;
-		case 4:
+		/*case 4:
 			book_ticket();
-			break;		
+			break;	*/	
     		case 0:
     			exit(0);
     			break;
@@ -64,7 +64,7 @@ void main()
 
 struct book* head=NULL;
 
-void insertfront() 
+void insert_details() 
 {
     struct book*newnode;
     newnode=(struct Node*)malloc(sizeof(struct Node))
@@ -88,7 +88,7 @@ void insertfront()
     }
     printf("\nSuccessfully inserted");
 }
-void traverse()
+void Viewall()
 {
     struct book *temp;
     temp=head;
@@ -108,7 +108,7 @@ void traverse()
     }
     printf("NULL\n");
 }
-void search()
+void find()
 {   
     struct book *temp;
     int code;
