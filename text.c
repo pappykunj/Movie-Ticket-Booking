@@ -1,11 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+
 struct book
 {
-    int code;
+	char code[20];
 	char name[20];
 	char date[20];
 	int cost;
-    struct book *next;
-};
+	
+
+}b;
+
+int seat = 60 ;
+
+void insert_details();//for inserting movie details
+void traverse(); // for view all data 
+void search(); // for finding data
+void book_ticket(); //for booking tickets
+
+void main()
+{
+
+	 int ch;
+ 	do{
+	printf("\n\n\n");	
+	printf("\t ***MOVIE TICKETING SYSTEM***");
+	printf("\n\n");
+	
+	
+	printf("\n*Enter <1> Insert Movie");
+   	printf("\n*Enter <2> View All Movie");
+	printf("\n*Enter <3> Find Movie ");
+	printf("\n*Enter <4> Book Ticket");
+   	printf("\n*Enter <0> Exit ");
+
+   	printf("\nEnter your Choice ::");
+   	scanf("%d",&ch); 	
+
+   	switch (ch)
+   	{
+    		case 1 :
+    			insert_details();
+   			break;
+		case 2:
+    			viewAll();
+   			break;
+		case 3:
+    			find();
+   			break;
+		case 4:
+			book_ticket();
+			break;		
+    		case 0:
+    			exit(0);
+    			break;
+    		default:
+    			printf("Wrong choice !");
+    			break;
+   	}
+ }while(ch!=0);
+
+}
 
 struct book* head=NULL;
 
