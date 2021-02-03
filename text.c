@@ -267,10 +267,18 @@ struct ticket* create_ticket(char *tktNumber)
 void insert_person()
 {
     char val[50];
-
+    Try:	
     printf("\nEnter the name of person : ");    
     scanf("%s", val);
-    newperson = create_person(val);
+    if(atoi(val))
+    {
+	 printf("\nYou have enter integer....Try Again:");
+	 goto Try; 	
+    }
+    else
+    {
+	 newperson = create_person(val);   
+    }	    
     if (firstPerson == lastPerson && lastPerson == NULL)
     {
         firstPerson = lastPerson = newperson;
