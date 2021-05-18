@@ -1,4 +1,7 @@
 # Movie
 
-In the repo it consits of a movie tickect booking process
-The further is done using c language 
+Movie ticket Booking program
+* Object oriented program
+Language used C
+
+Run platform: VS Code
