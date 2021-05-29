@@ -29,12 +29,12 @@ struct person* create_person(char *);
 struct ticket* create_ticket(char *);
 
 void insert_person();		// for inserting details
-void insert_ticket();		// To book tickets
+void insert_ticket();		// to book tickets
 void display_persons();		// for entering peron
 void display_tickets();		// for entering ticket details
 void insert_details();		// for inserting movie details
-void viewAll();			// for view the movies
-void find(); 			// for searching the moive
+void view_all();		// for view the movies
+void search_movie(); 		// for searching the moive
 void book_ticket(); 		// Menu to book tickets
 
 struct person *newperson;
@@ -72,10 +72,10 @@ void main()
     			insert_details();
    			break;
 		case 2:
-    			viewAll();
+    			view_all();
    			break;
 		case 3:
-    			find();
+    			search_movie();
    			break;
 		case 4:
 			book_ticket();
@@ -113,7 +113,7 @@ void insert_details()
     printf("\nSuccessfully inserted");
 }
 
-void viewAll()
+void view_all()
 {
     struct book *temp;
     temp=head;
@@ -134,7 +134,7 @@ void viewAll()
     printf("\n");
 }
 
-void find()
+void search_movie()
 {   
     struct book *temp;
     int code;
