@@ -15,4 +15,4 @@ Movie ticket Booking program
 
 Language used C
 
-Run platform: VS Code
+Run platform : VS Code
