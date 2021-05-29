@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include <malloc.h>
+#include<malloc.h>
 #include<string.h>
 
-struct person
+struct person		
 {
     char name[50];
     struct person *next;
@@ -15,13 +15,27 @@ struct ticket
     struct ticket *next;
 };
 
+struct book			
+{
+	int code;
+	char name[20];
+	char date[20];
+	int cost;
+	struct book *link;
+
+};
+
 struct person* create_person(char *);
 struct ticket* create_ticket(char *);
 
-void insert_person();
-void insert_ticket();
-void display_persons();
-void display_tickets();
+void insert_person();		// for inserting details
+void insert_ticket();		// To book tickets
+void display_persons();		// for entering peron
+void display_tickets();		// for entering ticket details
+void insert_details();		// for inserting movie details
+void viewAll();			// for view the movies
+void find(); 			// for searching the moive
+void book_ticket(); 		// Menu to book tickets
 
 struct person *newperson;
 struct person *ptrPerson;
@@ -32,40 +46,24 @@ struct person * firstPerson = NULL;
 struct person * lastPerson = NULL;
 struct ticket * firstTicket = NULL;
 struct ticket * lastTicket = NULL; 
+struct book * head = NULL;
 
-struct book
-{
-	int code;
-	char name[20];
-	char date[20];
-	int cost;
-	struct book *link;
-
-};
-
-struct book* head=NULL;
 int seat = 60 ;
-
-void insert_details();//for inserting movie details
-void viewAll(); // for view all data 
-void find(); // for finding data
-void book_ticket(); //for booking tickets
 
 void main()
 {
     int ch;
     do
     {
- 	    printf("\n\n\n");	    
- 	    printf("\t ***MOVIE TICKETING SYSTEM***");
-	    printf("\n\n");
-	    printf("\n*Enter <1> Insert Movie");
-   	    printf("\n*Enter <2> View All Movie");
-	    printf("\n*Enter <3> Find Movie ");
-	       printf("\n*Enter <4> Book Ticket");
+ 	printf("\n\n\n");	    
+ 	printf("\t ***MOVIE TICKETING SYSTEM***");
+	printf("\n\n");
+	printf("\n*Enter <1> Insert Movie");
+   	printf("\n*Enter <2> View All Movie");
+	printf("\n*Enter <3> Find Movie ");
+	printf("\n*Enter <4> Book Ticket");
    	printf("\n*Enter <0> Exit ");
-
-   	printf("\nEnter your Choice ::");
+	printf("\nEnter your Choice ::");
    	scanf("%d",&ch); 	
 
    	switch (ch)
@@ -89,11 +87,8 @@ void main()
     			printf("Wrong choice !");
     			break;
    	}
- }while(ch!=0);
-
+    }while(ch!=0);
 }
-
-
 
 void insert_details() 
 {
@@ -117,6 +112,7 @@ void insert_details()
     }
     printf("\nSuccessfully inserted");
 }
+
 void viewAll()
 {
     struct book *temp;
@@ -137,6 +133,7 @@ void viewAll()
     }
     printf("\n");
 }
+
 void find()
 {   
     struct book *temp;
@@ -189,9 +186,9 @@ void book_ticket()
         printf("\n---------------------------------\n");
         printf("\n1. Add Person in Q");
         printf("\n2. Add ticket");
-        printf("\n3.Display All Persons in Q:");
-	    printf("\n4.Display All Tickets");
-        printf("\n10.Exit\n");
+        printf("\n3. Display All Persons in Q:");
+	printf("\n4. Display All Tickets");
+        printf("\n0. Exit\n");
         printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         printf("\nEnter your choice : ");
         scanf("%d", &ch);
@@ -218,7 +215,7 @@ void book_ticket()
             display_tickets();
             break;
 		
-            case 10: 
+            case 0: 
             printf("\n...Exiting...\n");
             break;
             
@@ -345,4 +342,3 @@ void display_tickets()
         }
     }
 } 
-
